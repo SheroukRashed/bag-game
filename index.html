@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+</head>
+<body>
+    <div id="main">
+        <a v-bind:href="google_url" @click.prevent="alert_msg()">Visit Google</a><br>
+        <button @click.once="click_once">Click once</button><br>
+        <button @click.stop="stop_event_prop">Stop propagation</button>
+        <h1>Key Modefires</h1>
+        <input v-on:keyup.enter="click_once" >Press Enter</input><br>
+        <input v-on:keyup.down="click_once">Press down</input><br>
+        <input v-on:keyup.up="click_once">Press up</input><br>
+        <input @click.ctrl="click_once">Click on and Press ctrl</input><br>
+        <input @click.exact.ctrl="click_once">Click on and Press ctrl exact</input><br>
+        <h1>Mutual binding</h1>
+        <h3 v-text="massage"></h3>
+        <input v-on:keyup.enter="click_once" v-model="massage">Press Enter</input><br>
+
+
+    </div>
+    <div id="canvas" @mousemove="updateXY"> 
+        <span v-text="x"></span>
+        <span>,</span>
+        <span v-text="y"></span>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src='main.js'></script>
+</body>
+</html>
+
+<!-- the event input to the function is defiened explicitly "updateXY not updateXY() nor updateXY(event)"-->
+
+<!-- once
+prevent
+stop
+self: make sure the click event was not bubbled from a child event, but directly happened on that element
+passive passive: A Boolean which, if true, indicates that the function specified by listener will never call preventDefault().
+If a passive listener does call preventDefault(), the user agent will do nothing other than generate a console warning.
+capture -->
