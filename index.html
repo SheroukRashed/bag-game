@@ -21,13 +21,19 @@
         <h1>Mutual binding</h1>
         <h3 v-text="massage"></h3>
         <input v-on:keyup.enter="click_once" v-model="massage">Press Enter</input><br>
-
+        
 
     </div>
     <div id="canvas" @mousemove="updateXY"> 
         <span v-text="x"></span>
         <span>,</span>
-        <span v-text="y"></span>
+        <span v-text="y"></span><br><br><br>
+        <h2>Dynamic css</h2>
+        <div v-bind:class="[x <= 0? 'red': 'green']">hi all</div> 
+        <button @click="avilable=!avilable">Toggle 1</button>
+        <button @click="nearby=!nearby">Toggle 2</button>
+        <div v-bind:class="compClasses()">hi all again</div> 
+
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src='main.js'></script>
@@ -43,3 +49,11 @@ self: make sure the click event was not bubbled from a child event, but directly
 passive passive: A Boolean which, if true, indicates that the function specified by listener will never call preventDefault().
 If a passive listener does call preventDefault(), the user agent will do nothing other than generate a console warning.
 capture -->
+
+
+
+<!-- bind.class takes either object or single value -->
+
+
+
+<!-- Method run function every time while computed access result from cach -->

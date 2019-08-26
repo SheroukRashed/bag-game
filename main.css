@@ -4,3 +4,28 @@
     text-align: center;
     border: 1px solid #333;
 }
+
+.red{
+    width: 30px;
+    padding: 200px 20px;
+    text-align: center;
+    border: 1px solid rgb(230, 91, 91);
+}
+.green{
+    width: 30px;
+    padding: 200px 20px;
+    text-align: center;
+    border: 1px solid rgb(109, 206, 18);
+}
+.avilable{
+    width: 10px;
+    padding: 200px 20px;
+    text-align: center;
+    border: 1px solid rgb(21, 18, 206);
+}
+.nearby{
+    width: 10px;
+    padding: 200px 20px;
+    text-align: center;
+    background-color: rgb(206, 178, 18);
+}

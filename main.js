@@ -31,11 +31,27 @@ var canvas = new Vue({
     data: {
         x: "0",
         y: "0",
+        avilable: "true",
+        nearby: "true",
     },
     methods: {
         updateXY: function(event){
             this.x = event.offsetX;
             this.y = event.offsetY;
+        },
+        compClasses: function(){
+            return{
+                avilable: this.avilable,
+                nearby: this.nearby,
+            }
+        }
+    },
+    computed: {
+        compClasses: function(){
+            return{
+                avilable: this.avilable,
+                nearby: this.nearby,
+            }
         }
     },
 });
