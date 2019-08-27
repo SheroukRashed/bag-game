@@ -1,8 +1,9 @@
 <template>
   <div>
+    <h3>Trying Scooped</h3>
     <ul>
         <li v-for="ninja in ninjas">
-            {{ninja}}
+           {{ninja}}
         </li>
     </ul>
   </div>
@@ -19,6 +20,12 @@ export default {
 }
 </script>
 
-<style>
-
+<style >
+   li{
+    color: rgb(179, 157, 199);
+  }
+  h3{
+    color: greenyellow;
+  }
+ 
 </style>

@@ -1,9 +1,9 @@
 <template>
   <div>
     <h3>{{title}}</h3>
-    <h4>{{greeting()}}</h4>
+     <h4>{{greeting()}}</h4>
     <NinjaList></NinjaList>
-    <NinjaListTwo></NinjaListTwo>
+    <NinjaListTwo></NinjaListTwo> 
 
   </div>
 </template>
@@ -30,6 +30,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+  h3{
+    color: blueviolet;
+  }
 </style>
