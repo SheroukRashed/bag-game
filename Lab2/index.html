@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+</head>
+<body>
+    <div id="app">
+        <h2>Foor Loop</h2>
+        <ul v-for="(girl,i) in girls">
+                <li>{{i+1}}-{{girl}}</li>
+        </ul>
+        <ul v-for="boy in boys">
+            <li v-text="boy.name"></li>
+            <li v-text="boy.age"></li>
+        </ul>
+        <template v-for="boy in boys">
+                <span v-text="boy.name"></span><br>
+                <span v-text="boy.age"></span><br>
+        </template>
+        <template v-for="boy in boys">
+                <template v-for="(key,val) in boy">
+                        <span>{{key}}:{{val}}</span><br>
+                </template><br>
+        </template>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src='main.js'></script>
+</body>
+</html>
+
+<!-- template tag is not outed on the browser "more clean same output" since it only output what inside-->
