@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+</head>
+<body>
+    <div id="app">
+        <div id="bag">
+            <div v-if="!ended">
+                <img src="assets/bag.png">
+            </div>
+            <div v-else-if="ended">
+                    <img src="assets/bag-burst.png">
+            </div>
+        </div>
+        <div id="bag-health">
+            <div v-bind:style="{width: bagLife + '%'}"></div>
+        </div>
+        <div id="game-controls">
+            <button @click="bunch" v-show="!ended">Bunch</button>
+            <button @click="reset">Reset</button>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src='main.js'></script>
+    </div>
+</body>
+</html>
+
+<!-- template tag is not outed on the browser "more clean same output" since it only output what inside-->
