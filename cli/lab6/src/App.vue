@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <myheader></myheader>
+    <myheader v-bind:title="title" v-on:changeTitle="updateTitle($event)"></myheader>
     <myninjas v-bind:ninjas="ninjas"></myninjas>
 
-    <myfooter></myfooter>
+    <myfooter v-bind:title="title"></myfooter>
   </div>
 </template>
 
@@ -29,7 +29,13 @@ export default {
                 {name: 'Kami', speciality: 'Webpack', show: false},
                 {name: 'Yoshi', speciality: 'Data Diggin', show: false}
             ],
+          title: 'Original Title'
     }
+  },
+  methods: {
+    updateTitle: function(updatedTitle){
+      this.title = updatedTitle;
+    },
   }
 }
 </script>
